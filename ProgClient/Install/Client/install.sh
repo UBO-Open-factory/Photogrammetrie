@@ -9,6 +9,9 @@
 #Script ---------------------------------------------------------------------
 #Make PI launch the connect.sh when he boot
 (sudo crontab -l 2>/dev/null; echo '@reboot sudo su pi -c "/media/connect.sh &" &') | sudo crontab -
+#Add in /etc/fstab the tmpfs mount point to don't use the SD card for the watchdog logs
+mkdir /home/pi/watchdogLog
+echo "tmpfs /home/pi/watchdogLog tmpfs defaults,noatime,nosuid,size=32m 0 0" | sudo tee -a /etc/fstab
 #copy the script in the /media directory and make them executable
 sudo cp ./script/*.sh /media/
 sudo chmod +x /media/*.sh
