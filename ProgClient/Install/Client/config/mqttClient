@@ -1,0 +1,8 @@
+/var/log/MQTT/log {
+        daily
+        rotate 3
+        size 10M
+        compress
+        delaycompress
+        create 644 pi pi
+}

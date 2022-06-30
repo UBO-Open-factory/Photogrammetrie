@@ -1,0 +1,29 @@
+#----------------------------------------------------------------------------
+# Created By  : Titouan Melon
+# Created Date: 23/06/22
+# version ='1.0'
+# ---------------------------------------------------------------------------
+
+# Prepare the pi to execute the client correctely when he boot
+
+#Script ---------------------------------------------------------------------
+#Make PI launch the connect.sh when he boot
+(sudo crontab -l 2>/dev/null; echo '@reboot sudo su pi -c "/media/connect.sh &" &') | sudo crontab -
+#copy the script in the /media directory and make them executable
+sudo cp ./script/*.sh /media/
+sudo chmod +x /media/*.sh
+#Create log directory, file, and logrotate config
+sudo mkdir /var/log/MQTT
+sudo echo "make" > /var/log/MQTT/log
+sudo chown pi:pi /var/log/MQTT/log
+sudo cp ./config/mqttclient /etc/logrotate.d/
+#make file use by the script and the proggram in local
+echo "test" >  /home/pi/mac
+sudo echo "mount" > /media/data/mount
+#Config the NTP server if you want that all PI is up to date
+sudo cp ./config/timesyncd.conf /etc/systemd/
+#Here open raspi-config to allow camera
+sudo raspi-config
+#Uncomment the line below if you want disable wifi
+#sudo rfkill block wifi
+# ---------------------------------------------------------------------------
