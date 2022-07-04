@@ -4,7 +4,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='1.0'
+# version ='1.1'
 # ---------------------------------------------------------------------------
 
 """ Create a client that connects to an MQTT broker and wait for message.
@@ -31,8 +31,11 @@ BROKER_IP = "ip.of.the.broker"
 def on_log(client, userdata, level, buff):
 	""" Write log in the log file when a log interrupt is raise by the client"""
 	error = buff
-	print (error)
-	f = open("/var/log/MQTT/log", "a")
+	f = 0
+	if ((error == "Sending PINGREQ") or (error == "Received PINGRESP")):
+		f = open("/home/pi/watchdogLog/log", "a")
+	else:
+		f = open("/var/log/MQTT/log", "a")
 	f.write(datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+error+'\n')
 	f.close()
 

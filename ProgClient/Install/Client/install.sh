@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='1.0'
+# version ='1.1'
 # ---------------------------------------------------------------------------
 
 # Prepare the pi to execute the client correctely when he boot
@@ -25,6 +25,10 @@ echo "test" >  /home/pi/mac
 sudo echo "mount" > /media/data/mount
 #Config the NTP server if you want that all PI is up to date
 sudo cp ./config/timesyncd.conf /etc/systemd/
+#Install and config the watchdog for client
+sudo apt install watchdog -y
+sudo cp ./config/watchdog.conf /etc/
+sudo systemctl enable watchdog
 #Here open raspi-config to allow camera
 sudo raspi-config
 #Uncomment the line below if you want disable wifi

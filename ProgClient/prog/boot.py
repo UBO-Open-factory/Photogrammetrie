@@ -30,7 +30,6 @@ BROKER_IP = "ip.of.the.broker"
 def on_log(client, userdata, level, buff):
 	""" Write log in the log file when a log interrupt is raise by the client"""
 	error = buff
-	print (error)
 	f = open("/var/log/MQTT/log", "a")
 	f.write(datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"Boot.py: "+error+'\n')
 	f.close()
