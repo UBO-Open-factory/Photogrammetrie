@@ -118,7 +118,7 @@ def messageFunction (client, userdata, message):
 							os.system(str_cmd)
 						else:
 							os.system("gphoto2 --capture-image-and-download")
-							os.system("cp ./*.jpg ../../Preview/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
+							os.system("mv ./*.jpg ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
 						blue_flip_flop.start(50)
 					if (topic[2] == "receive"):
 						blue_flip_flop.start(100)
