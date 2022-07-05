@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='1.1'
+# version ='2.0'
 # ---------------------------------------------------------------------------
 
 # Prepare the pi to execute the client correctely when he boot
@@ -29,6 +29,8 @@ sudo cp ./config/timesyncd.conf /etc/systemd/
 sudo apt install watchdog -y
 sudo cp ./config/watchdog.conf /etc/
 sudo systemctl enable watchdog
+#Install gphoto2 to control DSLR
+sudo apt install gphoto2 -y
 #Here open raspi-config to allow camera
 sudo raspi-config
 #Uncomment the line below if you want disable wifi

@@ -4,7 +4,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='1.1'
+# version ='2.0'
 # ---------------------------------------------------------------------------
 
 """ Create a client that connects to an MQTT broker and wait for message.
@@ -16,6 +16,7 @@ import RPi.GPIO as GPIO
 import time
 import datetime
 import os
+import sys
 # ---------------------------------------------------------------------------
 
 #global variable-------------------------------------------------------------
@@ -25,6 +26,7 @@ nb_reconnect = 0
 
 # const variable ------------------------------------------------------------
 BROKER_IP = "ip.of.the.broker"
+DSLR=int(sys.argv[1])
 # ---------------------------------------------------------------------------
 
 #Callback function ----------------------------------------------------------
@@ -102,13 +104,21 @@ def messageFunction (client, userdata, message):
 		if (len(topic) > 1):
 			if (topic[1] == "all"): #Take photo and save it on NAS with the name : Date+message
 				os.system("sudo mkdir ../../Test/"+message)
-				str_cmd = "sudo raspistill -t 1 -q 100 -o ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
-				os.system(str_cmd)
+				if (DSLR == 0):
+					str_cmd = "sudo raspistill -t 1 -q 100 -o ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
+					os.system(str_cmd)
+				else:
+					os.system("gphoto2 --capture-image-and-download")
+					os.system("mv ./*.jpg ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
 			if (topic[1] == mac_address[0]): #Take photo and save it on NAS with the name : mac_address + preview
 				if (len(topic) > 2):
 					if (topic[2] == "send"):
-						str_cmd = "sudo raspistill -t 1 -q 25 -w 100 -h 100 -o ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
-						os.system(str_cmd)
+						if (DSLR == 0):
+							str_cmd = "sudo raspistill -t 1 -q 25 -w 100 -h 100 -o ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
+							os.system(str_cmd)
+						else:
+							os.system("gphoto2 --capture-image-and-download")
+							os.system("cp ./*.jpg ../../Preview/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
 						blue_flip_flop.start(50)
 					if (topic[2] == "receive"):
 						blue_flip_flop.start(100)

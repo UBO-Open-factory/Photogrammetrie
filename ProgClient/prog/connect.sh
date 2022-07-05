@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='1.1'
+# version ='2.0'
 # ---------------------------------------------------------------------------
 
 # Mount the share directory that contains the venv python
@@ -29,6 +29,12 @@ else
 	#Copy the script for update
 	sudo cp /media/data/ProgClient/prog/connect.sh /media/connect.sh
 	#DO NOT MODIFY THE SCRIPT BEFORE THIS POINT TO AVOID TO BREAK THE SCRIPT AND DISABLE THE AUTO UPDATE
+	var=$(gphoto2 --auto-detect | awk '{print $3}')
+	if [ -z $var ]; then
+		DSLR=0
+	else
+		DSLR=1
+	fi
 	sudo rfkill block wifi
 	echo "Directory mount success" >> /var/log/MQTT/log
 	#activate the python env
@@ -43,7 +49,7 @@ else
 	echo "Prog lancé" >> /var/log/MQTT/log
 	#Launch the loop python programme
 	echo "Lancement client" >> /home/pi/watchdogLog/log
-	python3 prog.py
+	python3 prog.py $DSLR
 	echo "Prog fini" >> /var/log/MQTT/log
 	#If prog end turn on blue and red led for error
 	sudo /media/gpio.sh 1
