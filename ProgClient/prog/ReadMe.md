@@ -2,11 +2,11 @@
 
 | Red led       | Blue led      | State                                                                                           |
 | ------------- | ------------- | ----------------------------------------------------------------------------------------------- |
-| Off           | Off           | Pi eteinte ou ne demarre pas le script de lancement /media/data/connect.sh                      |
-| On            | Off           | Erreur lors du montage du répertoire                                                            |
-| Flashes       | Off           | Erreur lors de la connexion au broker MQTT                                                      |
-| Flashes       | On            | Erruer de multiples connexions au broker MQTT : possible erreur deux appareils avec le même nom |
-| On            | On            | Programme python a cesse de fonctionner                                                         |
+| Off           | Off           | Rpi off or no link with the switch                                                              |
+| On            | Off           | Error when mount share directory                                                                |
+| Flashes       | Off           | Error whith connection to the MQTT broker                                                       |
+| Flashes       | On            | The Rpi is connect and disconnect multiple times maybe two rpi have the same name               |
+| On            | On            | The python programm have crashed                                                                |
 
 # CODE LED BLUE:
 
