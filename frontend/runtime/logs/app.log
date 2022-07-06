@@ -1,0 +1,160 @@
+2022-06-13 09:33:04 [127.0.0.1][1][0oo07jfi7u35brsedtc8mfu02k][error][yii\base\ErrorException:2] yii\base\ErrorException: imagettfbbox(): Could not find/open font in C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php:295
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'imagettfbbox():...', 'C:\\xampp\\htdocs...', 295)
+#1 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php(295): imagettfbbox(30, 0, 'C:\\xampp\\htdocs...', 'xysuttf')
+#2 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php(257): yii\captcha\CaptchaAction->renderImageByGD('xysuttf')
+#3 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php(142): yii\captcha\CaptchaAction->renderImage('xysuttf')
+#4 [internal function]: yii\captcha\CaptchaAction->run()
+#5 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Action.php(93): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\Action->runWithParams(Array)
+#7 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction('captcha', Array)
+#8 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/captcha', Array)
+#9 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\xampp\htdocs\RPI_Photogrammétrie\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+2022-06-13 09:33:04 [127.0.0.1][1][0oo07jfi7u35brsedtc8mfu02k][info][application] $_GET = [
+    'r' => 'site/captcha'
+    'v' => '62a6e8309c1f24.13105230'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '0oo07jfi7u35brsedtc8mfu02k'
+    '_csrf-frontend' => 'a6fbe3dd87fb85825f031e51a8c4772cec2143662aa301263a301fe07abddbe0a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"FMvaSpYIadCKAMIP_7VDvsG91dw0qubZ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dUnu7Nfk7pTvrV0JILptoKnQ_6Br52ql'
+    '__captcha/site/captcha' => 'xysuttf'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'rpifront.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://rpifront.test/index.php?r=site%2Fcontact'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5'
+    'HTTP_COOKIE' => 'advanced-frontend=0oo07jfi7u35brsedtc8mfu02k; _csrf-frontend=a6fbe3dd87fb85825f031e51a8c4772cec2143662aa301263a301fe07abddbe0a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22FMvaSpYIadCKAMIP_7VDvsG91dw0qubZ%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\PuTTY\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Fablab\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Fablab\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6 Server at rpifront.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6'
+    'SERVER_NAME' => 'rpifront.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/RPI_Photogrammétrie/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/RPI_Photogrammétrie/frontend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/RPI_Photogrammétrie/frontend/web/index.php'
+    'REMOTE_PORT' => '52695'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fcaptcha&v=62a6e8309c1f24.13105230'
+    'REQUEST_URI' => '/index.php?r=site%2Fcaptcha&v=62a6e8309c1f24.13105230'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1655105584.6585
+    'REQUEST_TIME' => 1655105584
+]
+2022-06-13 09:33:06 [127.0.0.1][1][0oo07jfi7u35brsedtc8mfu02k][error][yii\base\ErrorException:2] yii\base\ErrorException: imagettfbbox(): Could not find/open font in C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php:295
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'imagettfbbox():...', 'C:\\xampp\\htdocs...', 295)
+#1 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php(295): imagettfbbox(30, 0, 'C:\\xampp\\htdocs...', 'xysuttf')
+#2 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php(257): yii\captcha\CaptchaAction->renderImageByGD('xysuttf')
+#3 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\captcha\CaptchaAction.php(142): yii\captcha\CaptchaAction->renderImage('xysuttf')
+#4 [internal function]: yii\captcha\CaptchaAction->run()
+#5 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Action.php(93): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\Action->runWithParams(Array)
+#7 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction('captcha', Array)
+#8 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/captcha', Array)
+#9 C:\xampp\htdocs\RPI_Photogrammétrie\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\xampp\htdocs\RPI_Photogrammétrie\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+2022-06-13 09:33:06 [127.0.0.1][1][0oo07jfi7u35brsedtc8mfu02k][info][application] $_GET = [
+    'r' => 'site/captcha'
+    'v' => '62a6e832977367.19402420'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '0oo07jfi7u35brsedtc8mfu02k'
+    '_csrf-frontend' => 'a6fbe3dd87fb85825f031e51a8c4772cec2143662aa301263a301fe07abddbe0a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"FMvaSpYIadCKAMIP_7VDvsG91dw0qubZ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dUnu7Nfk7pTvrV0JILptoKnQ_6Br52ql'
+    '__captcha/site/captcha' => 'xysuttf'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'rpifront.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://rpifront.test/index.php?r=site%2Fcontact'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5'
+    'HTTP_COOKIE' => 'advanced-frontend=0oo07jfi7u35brsedtc8mfu02k; _csrf-frontend=a6fbe3dd87fb85825f031e51a8c4772cec2143662aa301263a301fe07abddbe0a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22FMvaSpYIadCKAMIP_7VDvsG91dw0qubZ%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\PuTTY\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Fablab\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Fablab\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6 Server at rpifront.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.53 (Win64) OpenSSL/1.1.1n PHP/8.1.6'
+    'SERVER_NAME' => 'rpifront.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/RPI_Photogrammétrie/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/RPI_Photogrammétrie/frontend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/RPI_Photogrammétrie/frontend/web/index.php'
+    'REMOTE_PORT' => '52696'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fcaptcha&v=62a6e832977367.19402420'
+    'REQUEST_URI' => '/index.php?r=site%2Fcaptcha&v=62a6e832977367.19402420'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1655105586.6371
+    'REQUEST_TIME' => 1655105586
+]
