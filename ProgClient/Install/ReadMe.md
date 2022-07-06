@@ -42,9 +42,9 @@ ip address of NAS and MQTT broker so write it somewhere.
 4- Make the install.sh script executable and execute him:
 ```
 sudo chmod +x ./install.sh
-./install.sh
+sudo su -c "./install.sh"
 ```
-5- if the computer shutdown is good
+5- If the computer shutdown is good
 		
 When you have the venv correctly installed you need to add the **prog** directory in the venv folder and set inforamtion about nas ip in **connect.sh** and broker ip in **boot.py** and **prog.py**, in the **prog** folder.
 			
