@@ -21,9 +21,10 @@ sudo mount -t nfs ip.of.the.nas:/path/to/share/directory /media/data >> /var/log
 sudo apt install python3-venv -y
 sudo python3 -m venv /media/data/ProgClient
 #Active the venv
+sudo su
 source /media/data/ProgClient/bin/activate
 #Install the lib
-sudo pip install -r ./requirements.txt
+pip install -r ./requirements.txt
 #Shutdown
 sudo shutdown -h now
 # ---------------------------------------------------------------------------
