@@ -104,21 +104,19 @@ def messageFunction (client, userdata, message):
 		if (len(topic) > 1):
 			if (topic[1] == "all"): #Take photo and save it on NAS with the name : Date+message
 				os.system("sudo mkdir ../../Test/"+message)
-				if (DSLR == 0):
-					str_cmd = "sudo raspistill -t 1 -q 100 -o ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
-					os.system(str_cmd)
-				else:
+				str_cmd = "sudo raspistill -t 1 -q 100 -o ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
+				os.system(str_cmd)
+				if (DSLR == 1): #Take photo with the DSLR if have one
 					os.system("gphoto2 --capture-image-and-download")
-					os.system("mv ./*.jpg ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
+					os.system("mv ./*.jpg ../../Test/"+message+"/DSLR_"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
 			if (topic[1] == mac_address[0]): #Take photo and save it on NAS with the name : mac_address + preview
 				if (len(topic) > 2):
 					if (topic[2] == "send"):
-						if (DSLR == 0):
-							str_cmd = "sudo raspistill -t 1 -q 25 -w 100 -h 100 -o ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
-							os.system(str_cmd)
-						else:
+						str_cmd = "sudo raspistill -t 1 -q 25 -w 100 -h 100 -o ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
+						os.system(str_cmd)
+						if (DSLR == 1): #Take photo with the DSLR if have one
 							os.system("gphoto2 --capture-image-and-download")
-							os.system("mv ./*.jpg ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
+							os.system("mv ./*.jpg ../../Preview/DSLR_"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
 						blue_flip_flop.start(50)
 					if (topic[2] == "receive"):
 						blue_flip_flop.start(100)
