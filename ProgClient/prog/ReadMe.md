@@ -40,8 +40,10 @@ All **bold** part may be changed for write the good mac address and the good mes
 
 # BRANCHEMENTS: (sur barre le plus loin de la prise HDMI)
 
-| Name     | Pin |
-|--------- | --- |
-| GND      | 7   |
-| LED_BLUE | 6   |
-| LED_RED  | 8   |
+| Name     | Pin  |
+|--------- | ---- |
+| GND      | 14   |
+| LED_BLUE | 12   |
+| LED_RED  | 16   |
+
+![alt text](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Header-with-Photo-768x512.png)
