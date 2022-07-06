@@ -4,7 +4,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='1.0'
+# version ='2.0'
 # ---------------------------------------------------------------------------
 
 """ create a client that connects to an MQTT broker and send the mac address
@@ -43,6 +43,7 @@ def on_connect(client, userdata, flags, rc):
 	client.publish("Register", mac_address[0])
 	client.subscribe("Time")
 	client.publish("Time", datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]'))
+	os.system("echo '0' | sudo tee /media/boot")
 # ---------------------------------------------------------------------------
 
 # main ----------------------------------------------------------------------

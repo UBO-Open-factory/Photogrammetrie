@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='2.0'
+# version ='2.1'
 # ---------------------------------------------------------------------------
 
 # Prepare the pi to execute the client correctely when he boot
@@ -22,7 +22,8 @@ sudo chown pi:pi /var/log/MQTT/log
 sudo cp ./config/mqttclient /etc/logrotate.d/
 #make file use by the script and the proggram in local
 echo "test" >  /home/pi/mac
-sudo echo "mount" > /media/data/mount
+echo "mount" | sudo tee /media/data/mount
+echo "0" | sudo tee /media/boot
 #Config the NTP server if you want that all PI is up to date
 sudo cp ./config/timesyncd.conf /etc/systemd/
 #Install and config the watchdog for client

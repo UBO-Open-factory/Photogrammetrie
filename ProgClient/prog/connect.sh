@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
 # Created Date: 23/06/22
-# version ='2.0'
+# version ='2.1'
 # ---------------------------------------------------------------------------
 
 # Mount the share directory that contains the venv python
@@ -10,6 +10,16 @@
 #Script ---------------------------------------------------------------------
 echo "Lancement" >> /var/log/MQTT/log
 echo "Lancement" >> /home/pi/watchdogLog/log
+
+declare -i boot=$(cat /media/boot)
+boot+=1
+echo $boot | sudo tee /media/boot
+
+if [ $boot = 3 ]; then
+		sudo systemctl stop watchdog.service
+        echo '0' | sudo tee /media/boot
+fi
+
 #Wait for network is up
 var=$(ping ip.of.the.NAS -c 1 2>&1)
 while [ ${var:15:7} = "Network" ]
