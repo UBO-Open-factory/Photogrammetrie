@@ -56,28 +56,28 @@ When you have the venv correctly installed you need to add the **prog** director
 ```
 'cd path/of/Client/directory'
 ```
-4. Make the install.sh script executable and execute him:
+4. Open the script **connect.sh**:
+```
+sudo nano script/connect.sh
+```
+5. Set information about nas ip and name of share directory
+6. Make the install.sh script executable and execute him:
 ```
 sudo chmod +x ./install.sh
+sed -i 's/\r$//' install.sh
 ./install.sh
 ```
-5. After a while you need to config the camera to this the script execute the command below
+7. After a while you need to config the camera to this the script execute the command below
 ```
 raspi-config 
 ```
-6. Here you need to go to :
+8. Here you need to go to :
 	- 3 Interface Options
-	- P1 Camera
-	- yes
-7. Open the script **connect.sh**:
-```
-sudo nano /media/connect.sh
-```
-8. Set information about nas ip and name of share directory
-9. Reboot
-```
-sudo reboot
-```
+	- I1 Legacy Camera
+	- Yes
+	- Ok
+	- Finish
+	- Yes reboot
 
 The pi download the good **connect.sh** script on the share directory and reboot the first time automatycally so wait few minutes and don't worry
 			
