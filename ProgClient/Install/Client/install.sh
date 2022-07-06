@@ -22,6 +22,7 @@ sudo chown pi:pi /var/log/MQTT/log
 sudo cp ./config/mqttclient /etc/logrotate.d/
 #make file use by the script and the proggram in local
 echo "test" >  /home/pi/mac
+sudo mkdir /media/data
 echo "mount" | sudo tee /media/data/mount
 echo "0" | sudo tee /media/boot
 #Config the NTP server if you want that all PI is up to date
