@@ -41,7 +41,12 @@ def messageFunction (client, userdata, message):
 	message = str(message.payload.decode("utf-8"))
 	if (topic[0] == "Register"):
 		cursor = mydb.cursor()
-		cursor.execute("sql commande to add message variable to database")
+		sql = """INSERT INTO MAC(ADDRESS) VALUES ('"""+message+"""')"""
+		try:
+			cursor.execute(sql)
+			mydb.commit()
+		except:
+			mydb.rollback()
 
 # ---------------------------------------------------------------------------
 
