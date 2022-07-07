@@ -13,6 +13,7 @@ use yii\bootstrap4\Progress;
 $this->title = 'État de connexion des Raspberry Pi';
 $this->params['breadcrumbs'][] = $this->title;
 
+
 $con = mysqli_connect("localhost","root","","rpi_photogrammétrie");
 $sql = "SELECT * from rpi";
 
@@ -82,7 +83,7 @@ $notworking=($rowcountoff/$rowcount)*100;
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <?php echo $rowcountoff?>Raspberry Pi n'ont pas été connectées,êtes-vous sûr de continuer? 
+                    <?php echo $rowcountoff ?>Raspberry Pi n'ont pas été connectées,êtes-vous sûr de continuer? 
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
