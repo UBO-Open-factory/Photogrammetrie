@@ -49,7 +49,7 @@ sudo su -c "./install.sh"
 When you have the venv correctly installed you need to add the **prog** directory in the venv folder and set inforamtion about nas ip in **connect.sh** and broker ip in **boot.py** and **prog.py**, in the **prog** folder.
 			
 **Now we can install the client for the fisrt RPI**
-# Install the client:
+# Install the client manually:
 1. Install PI os without desktop' on a pi 3
 2. Download the **Client** directory on the pi => wget or git clone
 3. Open a terminal and go to in the directory:
@@ -80,6 +80,17 @@ raspi-config
 	- Yes reboot
 
 The pi download the good **connect.sh** script on the share directory and reboot the first time automatycally so wait few minutes and don't worry
-			
-# Now you can duplicate this client on an another SD card for that
+
+**Now you can duplicate this client on an another SD card for that**
 You can use **win32diskimager** on windows to create a .img and write it an another SD cards.
+
+# Install the client with image:
+1. Download the **Client_img** directory
+2. Open it and install Raspberry Pi Imager
+3. In the same time unzip the **RPI_xx.xx.xx_2.75Go.rar**
+4. Launch raspberry pi imager
+5. Click on **Choose OS**
+6. Go to the bottom of the list and select **Use image perso**
+7. Select the **RPI_xx.xx.xx_2.75Go.img**
+8. Select your SD card and click on write
+9. A message say you when it is finish and you can remove your SD card
