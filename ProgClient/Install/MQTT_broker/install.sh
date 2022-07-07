@@ -9,6 +9,6 @@
 #Script ---------------------------------------------------------------------
 sudo apt install mosquitto
 echo "listener 1883" >> /etc/mosquitto/conf.d/default.conf
-echo "allow_anonymous" true >> /etc/mosquitto/conf.d/default.conf
+echo "allow_anonymous true" >> /etc/mosquitto/conf.d/default.conf
 sudo reboot
 # ---------------------------------------------------------------------------
