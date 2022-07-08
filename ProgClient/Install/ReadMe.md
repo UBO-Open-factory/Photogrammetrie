@@ -61,17 +61,22 @@ When you have the venv correctly installed you need to add the **prog** director
 sudo nano script/connect.sh
 ```
 5. Set information about nas ip and name of share directory
-6. Make the install.sh script executable and execute him:
+6. Open the config file **timesyncd.conf**
+```
+sudo nano config/timesyncd.conf
+```
+7. Set information about nas ip
+8. Make the install.sh script executable and execute him:
 ```
 sudo chmod +x ./install.sh
 sed -i 's/\r$//' install.sh
 ./install.sh
 ```
-7. After a while you need to config the camera to this the script execute the command below
+9. After a while you need to config the camera to this the script execute the command below
 ```
 raspi-config 
 ```
-8. Here you need to go to :
+10. Here you need to go to :
 	- 3 Interface Options
 	- I1 Legacy Camera
 	- Yes
