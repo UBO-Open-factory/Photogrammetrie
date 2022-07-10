@@ -20,7 +20,7 @@ BROKER_IP = "ip.of.the.broker"
 USER_DB = "username"
 PASS_DB = "password"
 IP_DB = "ip.of.the.db"
-DB = "mydb"
+DB = "mysql.mac"
 # ---------------------------------------------------------------------------
 
 #Callback function ----------------------------------------------------------
