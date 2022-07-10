@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
-# Created Date: 23/06/22
-# version ='1.0'
+# Created Date: 10/07/22
+# version ='3.0'
 # ---------------------------------------------------------------------------
 
 # Install the venv python on the share directory and install the lib
@@ -16,7 +16,7 @@ do
 done
 #Mount directory with nfs protocole
 sudo mkdir /media/data
-sudo mount -t nfs ip.of.the.nas:/path/to/share/directory /media/data >> /var/log/MQTT/log
+sudo mount -t nfs ip.of.the.nas:/path/to/share/directory /media/data
 #Make the venv environnement
 sudo apt install python3-venv -y
 sudo python3 -m venv /media/data/ProgClient

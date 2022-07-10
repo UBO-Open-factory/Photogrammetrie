@@ -36,7 +36,6 @@ All **bold** part may be changed for write the good mac address and the good mes
 |Prog.py      | Rpi client                               |
 |mac.sh       | write mac_address on '/home/pi/mac' file |
 |errorGPIO.py | make red led flashes                     |
-|server.py    | Add rpi in db                            |
 
 # BRANCHEMENTS: (sur barre le plus loin de la prise HDMI)
 

@@ -33,13 +33,16 @@ ip address of NAS and MQTT broker so write it somewhere.
 
 # Install of venv python:
 
-1- Download **Python-venv** directory => git clone or wget
-2- Open a terminal and go in the directory : 
+1. Download **Python-venv** directory => git clone or wget
+2. Open a terminal and go in the directory : 
 ```
 'cd path/of/Python-venv/directory'
 ```
-3- open **install.sh** and set the good information about nas ip and name of share directory
-4- Make the install.sh script executable and execute him:
+3. open **install.sh** and set the good information about nas ip and name of share directory
+```
+nano install.sh
+```
+4. Make the install.sh script executable and execute him:
 ```
 sudo chmod +x ./install.sh
 sudo su -c "./install.sh"
@@ -69,7 +72,7 @@ sudo nano config/timesyncd.conf
 8. Make the install.sh script executable and execute him:
 ```
 sudo chmod +x ./install.sh
-sed -i 's/\r$//' install.sh
+sudo sed -i 's/\r$//' install.sh
 ./install.sh
 ```
 9. After a while you need to config the camera to this the script execute the command below

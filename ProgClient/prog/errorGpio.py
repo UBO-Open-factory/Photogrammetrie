@@ -3,8 +3,8 @@
 
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
-# Created Date: 23/06/22
-# version ='1.0'
+# Created Date: 10/07/22
+# version ='3.0'
 # ---------------------------------------------------------------------------
 
 """ Make led on pin 23 of GPIO flash with frequency and duty cycle

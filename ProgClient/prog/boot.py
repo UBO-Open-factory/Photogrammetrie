@@ -3,8 +3,8 @@
 
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
-# Created Date: 06/07/22
-# version ='2.0'
+# Created Date: 10/07/22
+# version ='3.0'
 # ---------------------------------------------------------------------------
 
 """ create a client that connects to an MQTT broker and send the mac address
