@@ -35,7 +35,7 @@ sudo chmod +x /home/pi/*.sh
 sudo ln -s /media/data/Preview /var/www/html/Preview
 
 #Install python lib for server script
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 sudo pip install paho-mqtt mysql-connector-python
 sudo cp ./server.py /home/pi/
 
