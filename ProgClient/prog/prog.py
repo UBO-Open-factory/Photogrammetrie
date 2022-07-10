@@ -3,8 +3,8 @@
 
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
-# Created Date: 06/07/22
-# version ='2.0'
+# Created Date: 10/07/22
+# version ='3.0'
 # ---------------------------------------------------------------------------
 
 """ Create a client that connects to an MQTT broker and wait for message.
@@ -85,41 +85,36 @@ def messageFunction (client, userdata, message):
 	if (topic[0] == "Reboot"): #Reboot pi
 		if (len(topic) > 1):
 			if (topic[1] == mac_address[0]) or (topic[1] == "all"): #If it is just me or all
-				os.system("sudo reboot")
 				f = open("/var/log/MQTT/log", "a")
 				f.write(datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"Reboot : "+message)
 				f.close()
+				os.system("sudo reboot")
 				os.system("killall -9 python3")
 
 	if (topic[0] == "Shutdown"): #Reboot pi
 		if (len(topic) > 1):
 			if (topic[1] == mac_address[0]) or (topic[1] == "all"): #If it is just me or all
-				os.system("sudo shutdown -h now")
 				f = open("/var/log/MQTT/log", "a")
 				f.write(datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"Shutdown : "+message)
 				f.close()
+				os.system("sudo shutdown -h now")
 				os.system("killall -9 python3")
 
 	if (topic[0] == "Photo"): #Take photo
 		if (len(topic) > 1):
 			if (topic[1] == "all"): #Take photo and save it on NAS with the name : Date+message
-				os.system("sudo mkdir ../../Test/"+message)
-				str_cmd = "sudo raspistill -t 1 -q 100 -o ../../Test/"+message+"/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
+				os.system("sudo mkdir ../../3D/"+message)
+				str_cmd = "sudo raspistill -t 1 -q 100 -o ../../3D/"+message+"/"+mac_address[0]+".jpg"
 				os.system(str_cmd)
 				if (DSLR == 1): #Take photo with the DSLR if have one
 					os.system("gphoto2 --capture-image-and-download")
-					os.system("mv ./*.jpg ../../Test/"+message+"/DSLR_"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
+					os.system("mv ./*.jpg ../../3D/"+message+"/DSLR_"+mac_address[0]+".jpg")
 			if (topic[1] == mac_address[0]): #Take photo and save it on NAS with the name : mac_address + preview
-				if (len(topic) > 2):
-					if (topic[2] == "send"):
-						str_cmd = "sudo raspistill -t 1 -q 25 -w 100 -h 100 -o ../../Preview/"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg"
-						os.system(str_cmd)
-						if (DSLR == 1): #Take photo with the DSLR if have one
-							os.system("gphoto2 --capture-image-and-download")
-							os.system("mv ./*.jpg ../../Preview/DSLR_"+datetime.datetime.now().strftime('[%d.%m.%y_%H.%M.%S]')+"_"+mac_address[0]+".jpg")
-						blue_flip_flop.start(50)
-					if (topic[2] == "receive"):
-						blue_flip_flop.start(100)
+				str_cmd = "sudo raspistill -t 1 -q 25 -w 100 -h 100 -o ../../Preview/"+mac_address[0]+".jpg"
+				os.system(str_cmd)
+				if (DSLR == 1): #Take photo with the DSLR if have one
+					os.system("gphoto2 --capture-image-and-download")
+					os.system("mv ./*.jpg ../../Preview/DSLR_"+mac_address[0]+".jpg")
 
 	if (topic[0] == "IsAlive" and message == "is alive"): #Server want know if i'm alive or not
 		if (len(topic) > 1):

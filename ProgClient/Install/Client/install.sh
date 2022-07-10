@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Created By  : Titouan Melon
-# Created Date: 06/07/22
-# version ='2.1'
+# Created Date: 10/07/22
+# version ='3.0'
 # ---------------------------------------------------------------------------
 
 # Prepare the pi to execute the client correctely when he boot
@@ -17,9 +17,9 @@ sudo cp ./script/*.sh /media/
 sudo chmod +x /media/*.sh
 #Create log directory, file, and logrotate config
 sudo mkdir /var/log/MQTT
-sudo echo "make" > /var/log/MQTT/log
+echo "make" | sudo tee /var/log/MQTT/log
 sudo chown pi:pi /var/log/MQTT/log
-sudo cp ./config/mqttclient /etc/logrotate.d/
+sudo cp ./config/mqttClient /etc/logrotate.d/
 #make file use by the script and the proggram in local
 echo "test" >  /home/pi/mac
 sudo mkdir /media/data
@@ -33,8 +33,8 @@ sudo cp ./config/watchdog.conf /etc/
 sudo systemctl enable watchdog
 #Install gphoto2 to control DSLR
 sudo apt install gphoto2 -y
-#Here open raspi-config to allow camera
-sudo raspi-config
 #Uncomment the line below if you want disable wifi
 #sudo rfkill block wifi
+#Here open raspi-config to allow camera
+sudo raspi-config
 # ---------------------------------------------------------------------------
