@@ -170,10 +170,6 @@
 			}
 		}
 	}
-
-	function refreshImg(mac) {
-		alert("a");
-	}
 })();
 </script>
 
