@@ -17,6 +17,9 @@ done
 #Mount directory with nfs protocole
 sudo mkdir /media/data
 sudo mount -t nfs ip.of.the.nas:/path/to/share/directory /media/data
+#Make the folder use by client
+sudo mkdir /media/data/3D
+sudo mkdir /media/data/Preview
 #Make the venv environnement
 sudo apt install python3-venv -y
 sudo python3 -m venv /media/data/ProgClient
