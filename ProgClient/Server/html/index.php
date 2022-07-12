@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h1>Bases de données MySQL</h1>
+		<h1>Home sweet home</h1>
 		<?php
 			$servername = 'ip.of.the.db';
 			$username = 'db_username';
