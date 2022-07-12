@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h1>Bases de données MySQL</h1>
+		<h1>Preview</h1>
+		echo '<a href="index.php"> Back </a>';
 		<?php
 			$servername = 'ip.of.the.db';
 			$username = 'db_username';
@@ -158,10 +159,7 @@
 		if (httpRequest.readyState === XMLHttpRequest.DONE) {
 			if (httpRequest.status === 200) {
 				//alert(httpRequest.responseText);
-				if (action == "IsAliveSolo") {
-					window.location.reload();
-				}
-				else if (action == "PhotoSolo") {
+				if (action == "PhotoSolo") {
 					setTimeout(function (){document.getElementById(mac).src = "Preview/".concat(mac, ".jpg?1", new Date()*Math.random());}, 1000);
 				}
 				else if (action == "Photo") {
