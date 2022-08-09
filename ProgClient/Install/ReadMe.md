@@ -102,3 +102,13 @@ You can use **win32diskimager** on windows to create a .img and write it an anot
 7. Select the **RPI_xx.xx.xx_2.75Go.img**
 8. Select your SD card and click on write
 9. A message say you when it is finish and you can remove your SD card
+
+# Use the client
+
+1. To use your client RPI you need to start in order :
+	- The NAS
+	- The web server
+		- test web server : https://github.com/UBO-Open-factory/Photogrammetrie/tree/ClientRPI/ProgClient/Server
+		- real web server : https://github.com/UBO-Open-factory/Photogrammetrie/tree/ServeurYii
+	- All your client
+2. Next you can go on your web browser on the website by type the url : http://ip.of.web.server
