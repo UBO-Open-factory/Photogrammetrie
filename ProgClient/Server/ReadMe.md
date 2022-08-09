@@ -38,3 +38,9 @@ sudo sed -i 's/\r$//' install.sh
 10. Configure database for phpmyadmin with dbconfig-common? Yes
 11. Type your password and press OK
 12. When the script is complete the computer reboot
+
+# Use the web server
+
+1. Turn on the server, when it's done turn on the RPI.
+2. On a web browser on a computer connect to the same network as the server type the ip address in the navigation bar
+3. On the page you see all connect RPI and button to send order to RPI
