@@ -108,7 +108,7 @@ You can use **win32diskimager** on windows to create a .img and write it an anot
 1. To use your client RPI you need to start in order :
 	- The NAS
 	- The web server
-		- test web server : https://github.com/UBO-Open-factory/Photogrammetrie/tree/ClientRPI/ProgClient/Server
+		- test web server : https://github.com/UBO-Open-factory/Photogrammetrie/tree/ClientRPI/ProgClient/Server#use-the-web-server
 		- real web server : https://github.com/UBO-Open-factory/Photogrammetrie/tree/ServeurYii
 	- All your client
 2. Next you can go on your web browser on the website by type the url : http://ip.of.web.server
