@@ -10,9 +10,12 @@ For this project you nead :
 - a physical structure to hold all the RPIs. So all the RPI can have a different point of view of the subject you want to scanne.
 - a server (to store photos).
 
-## 
+# Client image Disk
+An image disk (.img) have been made for all your RPI. [You can found it here](./client-Install/Client_img/RPI_06.07.22_2.75Go.rar)
 
-# In this repository you can find :
+
+
+# Folders description
 ## FOLDER structure
 Contains the plan to build the physical structure parts.
 
