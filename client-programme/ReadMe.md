@@ -12,7 +12,7 @@
 
 The blue led can flash if you send the message to do this to identificate the rpi
 
-# MESSAGE MQTT:
+# MESSAGE MQTT
 
 | Topic                         | Message            | Action                                                                                                 |
 | ----------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------ |
