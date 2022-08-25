@@ -24,7 +24,6 @@ sudo phpenmod mysqli
 sudo service apache2 restart
 
 #Copy the website in web folder
-sudo rm /var/www/html/*
 sudo cp ./html/* /var/www/html
 
 #Copy script and make them executable

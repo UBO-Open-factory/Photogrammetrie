@@ -1,7 +1,5 @@
  <?php
-	$servername = 'ip.of.the.db';
-	$username = 'db_username';
-	$password = 'db_password';
+	include_once 'config.php';
 
 	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	//On établit la connexion

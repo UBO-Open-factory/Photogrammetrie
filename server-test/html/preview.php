@@ -5,11 +5,11 @@
 	</head>
 	<body>
 		<h1>Preview</h1>
-		echo '<a href="index.php"> Back </a>';
 		<?php
-			$servername = 'ip.of.the.db';
-			$username = 'db_username';
-			$password = 'db_password';
+
+include_once 'config.php';
+
+			echo '<a href="index.php"> Back </a>';
 
 			mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 			//On établit la connexion
@@ -172,4 +172,5 @@
 	}
 })();
 </script>
+
 

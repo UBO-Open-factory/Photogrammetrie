@@ -5,12 +5,9 @@
 ```
 cd path/of/Server/directory
 ```
-3. Set good information about database : ip, username, password in php file
+3. Set good information about database : ip, username, password in php config file
 ```
-sudo nano ./html/db.php
-sudo nano ./html/index.php
-sudo nano ./html/mqtt.php
-sudo nano ./html/preview.php
+sudo nano ./html/config.php
 ```
 4. Set good information about database : username, password in **install.sh** script
 ```

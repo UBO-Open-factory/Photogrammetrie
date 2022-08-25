@@ -1,4 +1,6 @@
 <?php
+include_once 'config.php';
+
 	$topic = explode('/', $_GET["topic"]);
 	$msg = $_GET["message"];
 	echo $_GET["topic"];
@@ -16,11 +18,7 @@
 		{
 			if ($topic[1] == "all")
 			{
-				$servername = 'ip.of.the.db';
-                $username = 'db_username';
-                $password = 'db_password';
-
-                mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+           mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                 //On établit la connexion
                 $conn = new mysqli($servername, $username, $password);
 
