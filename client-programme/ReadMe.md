@@ -1,4 +1,4 @@
-# CODE ERREUR:
+# CODE ERREUR
 
 | Red led       | Blue led      | State                                                                                           |
 | ------------- | ------------- | ----------------------------------------------------------------------------------------------- |
@@ -8,7 +8,7 @@
 | Flashes       | On            | The Rpi is connect and disconnect multiple times maybe two rpi have the same name               |
 | On            | On            | The python programm have crashed                                                                |
 
-# CODE LED BLUE:
+# CODE LED BLUE
 
 The blue led can flash if you send the message to do this to identificate the rpi
 
@@ -28,7 +28,7 @@ The blue led can flash if you send the message to do this to identificate the rp
 
 All **bold** part may be changed for write the good mac address and the good message
 
-# PROGRAMME:
+# PROGRAMME
 | Name        | Function                                 |
 |------------ | ---------------------------------------- |
 |connect.sh   | Script start at the boot of rpi          |
@@ -37,7 +37,7 @@ All **bold** part may be changed for write the good mac address and the good mes
 |mac.sh       | write mac_address on '/home/pi/mac' file |
 |errorGPIO.py | make red led flashes                     |
 
-# BRANCHEMENTS: (sur barre le plus loin de la prise HDMI)
+# BRANCHEMENTS (sur barre le plus loin de la prise HDMI)
 
 | Name     | Pin  |
 |--------- | ---- |
