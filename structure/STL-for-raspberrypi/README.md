@@ -1,4 +1,5 @@
 # Notice de montage du boîtier Raspberry pi
+![RPI Box](./images/RPI-box.png)
 
 # Description
 ## Présentation
