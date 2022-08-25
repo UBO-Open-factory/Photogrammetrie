@@ -7,17 +7,21 @@
 #Download the real 'connect.sh' script on share directory and
 #+ reboot to execute the new script
 
+# User configuration --------------------------------------------------------
+ipNas=ip.of.the.nas
+ShareDirectory=:/path/of/share/directory
+
 #Script ---------------------------------------------------------------------
 echo "Lancement" >> /var/log/MQTT/log
 #Wait for network up
-var=$(ping ip.of.the.nas -c 1 2>&1)
+var=$(ping $ipNas -c 1 2>&1)
 while [ ${var:15:7} = "Network" ]
 do
-	var=$(ping ip.of.the.nas -c 1 2>&1)
+	var=$(ping $ipNas -c 1 2>&1)
 done
 echo "Network is up" >> /var/log/MQTT/log
 #Mount directory with nfs protocole
-sudo mount -t nfs ip.of.the.nas:/path/of/share/directory /media/data >> /var/log/MQTT/log
+sudo mount -t nfs $ipNas$ShareDirectory /media/data >> /var/log/MQTT/log
 #Test if the directory if mount
 if [ -f /media/data/mount ]; then
 	echo "Error when mounting the directory" >> /var/log/MQTT/log

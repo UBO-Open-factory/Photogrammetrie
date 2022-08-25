@@ -49,7 +49,7 @@ sudo su -c "./install.sh"
 ```
 5- If the computer shutdown is good
 		
-When you have the venv correctly installed you need to add the **prog** directory in the venv folder and set inforamtion about nas ip in **connect.sh** and broker ip in **boot.py** and **prog.py**, in the **prog** folder.
+When you have the venv correctly installed you need to add the **prog** directory in the venv folder and set inforamtion about nas ip, broker ip and path of share directory in **connect.sh**
 			
 **Now we can install the client for the fisrt RPI**
 # Install the client manually:
@@ -59,11 +59,11 @@ When you have the venv correctly installed you need to add the **prog** director
 ```
 'cd path/of/Client/directory'
 ```
-4. Open the script **connect.sh**:
+4. Open the install script **connect.sh**:
 ```
 sudo nano script/connect.sh
 ```
-5. Set information about nas ip and name of share directory
+5. Set information about nas ip and path of share directory
 6. Open the config file **timesyncd.conf**
 ```
 sudo nano config/timesyncd.conf

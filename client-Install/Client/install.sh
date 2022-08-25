@@ -33,8 +33,6 @@ sudo cp ./config/watchdog.conf /etc/
 sudo systemctl enable watchdog
 #Install gphoto2 to control DSLR
 sudo apt install gphoto2 -y
-# disable wifi
-sudo rfkill block wifi
 #Here open raspi-config to allow camera
 sudo raspi-config
 # ---------------------------------------------------------------------------
