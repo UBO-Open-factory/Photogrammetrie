@@ -1,4 +1,4 @@
-#Server installation
+# Server installation
 ## Setup the Network Attached Storage:
 
 For this you need to setup a NAS wich have the possibilities to create an NFS share directory and, if you don't want to connect all the RPI to internet but have the RPI at the good time, the possibilities to make a NTP server. For this i can recommand you
@@ -46,10 +46,11 @@ sudo chmod +x ./install.sh
 sudo su -c "./install.sh"
 ```
 5- If the computer shutdown is good
-		
-#When you have the venv correctly installed you need to add the **prog** directory in the venv folder and set inforamtion about nas ip, broker ip and path of share directory in **connect.sh**
 
-#Client installation
+## Config the programme
+When you have the venv correctly installed you need to add the **prog** directory in the venv folder and set inforamtion about nas ip, broker ip and path of share directory in **connect.sh**
+
+# Client installation
 **Now we can install the client for the fisrt RPI**
 ## Install the client manually:
 1. Install PI os without desktop' on a pi 3
