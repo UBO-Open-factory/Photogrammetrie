@@ -5,11 +5,11 @@
 	</head>
 	<body>
 		<h1>Preview</h1>
-		echo '<a href="index.php"> Back </a>';
 		<?php
-			$servername = 'ip.of.the.db';
-			$username = 'db_username';
-			$password = 'db_password';
+
+include_once 'config.php';
+
+			echo '<a href="index.php"> Back </a>';
 
 			mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 			//On établit la connexion
@@ -26,8 +26,14 @@
 			foreach ($result as $row) {
 				if ($row['alive'] == 1)
 				{
+					$path = '/var/www/html/Preview/'. $row['address'] .'.jpg';
+					if (!file_exists($path))
+					{
+						$cmd = "curl -f http://169.254.138.104/mqtt.php?topic=Photo/" . $row['address'] . "/send&message=Preview -o /dev/null > /dev/null 2> /dev/null";
+						exec($cmd);
+					}
 					echo "<br>Client " . $row['address'] . " [Alive]";
-					echo '<button class="PhotoBut" data-name="PhotoSolo" value="' . $row['address'] . '" type="button"><img src="Preview/'. $row['address'] .'.jpg" id="'. $row['address'] .'"></button>';
+					echo '<button class="PhotoBut" data-name="PhotoSolo" value="' . $row['address'] . '" type="button"><img src="Preview/'. $row['address'] .'.jpg?1" id="'. $row['address'] .'"></button>';
 					echo '<button class="IsAliveBut" data-name="IsAliveSolo" value="' . $row['address'] . '" type="button">Start flash</button>';
 					echo '<button class="FlashBut" data-name="FlashSolo" value="' . $row['address'] . '" type="button">Stop flash</button>';
 				}
@@ -172,4 +178,5 @@
 	}
 })();
 </script>
+
 

@@ -7,16 +7,20 @@
 # Install the venv python on the share directory and install the lib
 #+ required by the client
 
+#User configuration
+ipNas=ip.of.the.nas
+ShareDirectory=:/path/to/share/directory
+
 #Script ---------------------------------------------------------------------
 #Wait for network up
-var=$(ping ip.of.the.nas -c 1 2>&1)
+var=$(ping $ipNas -c 1 2>&1)
 while [ ${var:15:7} = "Network" ]
 do
-	var=$(ping ip.of.the.nas -c 1 2>&1)
+	var=$(ping $ipNas -c 1 2>&1)
 done
 #Mount directory with nfs protocole
 sudo mkdir /media/data
-sudo mount -t nfs ip.of.the.nas:/path/to/share/directory /media/data
+sudo mount -t nfs $ipNas$ShareDirectory /media/data
 #Make the folder use by client
 sudo mkdir /media/data/3D
 sudo mkdir /media/data/Preview

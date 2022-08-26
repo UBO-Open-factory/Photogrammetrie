@@ -6,9 +6,7 @@
 	<body>
 		<h1>Home sweet home</h1>
 		<?php
-			$servername = 'ip.of.the.db';
-			$username = 'db_username';
-			$password = 'db_password';
+			include_once 'config.php';
 
 			mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 			//On établit la connexion
@@ -44,7 +42,7 @@
 			echo '<br><button class="RemoveBut" data-name="Remove" type="button">Remove all no alive</button>';
 			echo '<br><input type="text" placeholder="why reboot", id="Reboot"/><button class="RebootBut" data-name="Reboot" type="button">Reboot all</button>';
 			echo '<br><input type="text" placeholder="why shutdown", id="Shutdown"/><button class="ShutdownBut" data-name="Shutdown" type="button">Shutdown all</button>';
-
+			echo '<br><button type="button"><a href="shut.php">Shutdown Rpi</a></button>';
 			$conn->close
 		?>
 	</body>
@@ -179,4 +177,5 @@
 	}
 })();
 </script>
+
 

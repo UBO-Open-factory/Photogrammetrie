@@ -13,13 +13,14 @@ and add every message receive in a sql database"""
 # Import libraries ----------------------------------------------------------
 import paho.mqtt.client as mqtt
 import mysql.connector
+import sys
 # ---------------------------------------------------------------------------
 
 # const variable ------------------------------------------------------------
-BROKER_IP = "ip.of.the.broker"
-USER_DB = "username"
-PASS_DB = "password"
-IP_DB = "ip.of.the.db"
+BROKER_IP = sys.argv[1]
+USER_DB = sys.argv[2]
+PASS_DB = sys.argv[3]
+IP_DB = sys.argv[4]
 DB = "mysql.mac"
 # ---------------------------------------------------------------------------
 
