@@ -59,9 +59,9 @@ When you have the venv correctly installed you need to add the **prog** director
 ```
 'cd path/of/Client/directory'
 ```
-4. Open the install script **connect.sh**:
+4. Open the user config file **user.conf**:
 ```
-sudo nano script/connect.sh
+sudo nano config/user.conf
 ```
 5. Set information about nas ip and path of share directory
 6. Open the config file **timesyncd.conf**
@@ -102,6 +102,7 @@ You can use **win32diskimager** on windows to create a .img and write it an anot
 7. Select the **RPI_xx.xx.xx_2.75Go.img**
 8. Select your SD card and click on write
 9. A message say you when it is finish and you can remove your SD card
+10. You need to change information in **/media/user.conf file** to work
 
 ## Use the client
 

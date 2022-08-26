@@ -8,9 +8,7 @@
 #+ activate it and start the client
 
 # User configuration --------------------------------------------------------
-ipNas=ip.of.the.nas
-ShareDirectory=:/path/of/share/directory
-ipBroker=ip.of.the.broker
+source /media/user.conf
 
 #Script ---------------------------------------------------------------------
 echo "Lancement" >> /var/log/MQTT/log
@@ -43,6 +41,7 @@ else
 	echo "Directory ok" >> /var/log/MQTT/log
 	#Copy the script for update
 	sudo cp /media/data/ProgClient/prog/connect.sh /media/connect.sh
+	sudo cp /media/data/ProgClient/prog/user.conf /media/user.conf
 	#DO NOT MODIFY THE SCRIPT BEFORE THIS POINT TO AVOID TO BREAK THE SCRIPT AND DISABLE THE AUTO UPDATE
 	var=$(gphoto2 --auto-detect | awk '{print $3}')
 	if [ -z $var ]; then

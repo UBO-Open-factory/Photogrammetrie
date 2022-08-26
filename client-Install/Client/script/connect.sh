@@ -8,8 +8,7 @@
 #+ reboot to execute the new script
 
 # User configuration --------------------------------------------------------
-ipNas=ip.of.the.nas
-ShareDirectory=:/path/of/share/directory
+source /media/user.conf
 
 #Script ---------------------------------------------------------------------
 echo "Lancement" >> /var/log/MQTT/log
@@ -29,6 +28,7 @@ else
 	echo "Directory ok" >> /var/log/MQTT/log
 	#copy the real startup scripàt
 	sudo cp /media/data/ProgClient/prog/connect.sh /media/connect.sh
+	sudo cp /media/user.conf /media/data/ProgClient/prog/user.conf
 	echo "Connect.shy success copy" >> /var/log/MQTT/log
 	#reboot to apply the update
 	sudo reboot

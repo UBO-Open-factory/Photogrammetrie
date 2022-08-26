@@ -15,6 +15,7 @@ echo "tmpfs /home/pi/watchdogLog tmpfs defaults,noatime,nosuid,size=32m 0 0" | s
 #copy the script in the /media directory and make them executable
 sudo cp ./script/*.sh /media/
 sudo chmod +x /media/*.sh
+sudo cp ./config/user.conf /media/
 #Create log directory, file, and logrotate config
 sudo mkdir /var/log/MQTT
 echo "make" | sudo tee /var/log/MQTT/log
