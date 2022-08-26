@@ -33,7 +33,7 @@ ip address of NAS and MQTT broker so write it somewhere.
 
 1. Download **Python-venv** directory
 ```
-wget https://github.com/UBO-Open-factory/Photogrammetrie/raw/ClientRPI/client-Install/Python-venv/download.sh
+wget https://github.com/UBO-Open-factory/Photogrammetrie/raw/main/client-Install/Python-venv/download.sh
 chmod +x ./download.sh
 ./download.sh
 ```
@@ -61,7 +61,7 @@ When you have the venv correctly installed you need to add the **prog** director
 1. Install PI os without desktop' on a pi 3
 2. Download the **Client** directory on the pi
 ```
-wget https://github.com/UBO-Open-factory/Photogrammetrie/raw/ClientRPI/client-Install/Client/download.sh
+wget https://github.com/UBO-Open-factory/Photogrammetrie/raw/main/client-Install/Client/download.sh
 chmod +x ./download.sh
 ./download.sh
 ```
