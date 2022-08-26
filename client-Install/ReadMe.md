@@ -31,10 +31,15 @@ ip address of NAS and MQTT broker so write it somewhere.
 
 ## Install of venv python:
 
-1. Download **Python-venv** directory => git clone or wget
-2. Open a terminal and go in the directory : 
+1. Download **Python-venv** directory
 ```
-'cd path/of/Python-venv/directory'
+wget https://github.com/UBO-Open-factory/Photogrammetrie/raw/ClientRPI/client-Install/Python-venv/download.sh
+chmod +x ./download.sh
+./download.sh
+```
+2. Go in the directory : 
+```
+'cd Python-venv'
 ```
 3. open **install.sh** and set the good information about nas ip and name of share directory
 ```
