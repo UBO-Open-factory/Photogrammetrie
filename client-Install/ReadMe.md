@@ -54,10 +54,15 @@ When you have the venv correctly installed you need to add the **prog** director
 **Now we can install the client for the fisrt RPI**
 ## Install the client manually:
 1. Install PI os without desktop' on a pi 3
-2. Download the **Client** directory on the pi => wget or git clone
-3. Open a terminal and go to in the directory:
+2. Download the **Client** directory on the pi
 ```
-'cd path/of/Client/directory'
+wget https://github.com/UBO-Open-factory/Photogrammetrie/raw/ClientRPI/client-Install/Client/download.sh
+chmod +x ./download.sh
+./download.sh
+```
+3. Go to in the directory:
+```
+cd Client
 ```
 4. Open the user config file **user.conf**:
 ```
