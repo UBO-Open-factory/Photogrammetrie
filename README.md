@@ -16,6 +16,8 @@ An image disk (.img) have been made for all your RPI. [You can found it here](./
 
 
 # Folders description
+
+```
 +---client-Install
 |   +---Client
 |   |   +---config
@@ -32,6 +34,7 @@ An image disk (.img) have been made for all your RPI. [You can found it here](./
     +---files
     \---STL-for-raspberrypi
         \---images
+```
 
 ## FOLDER structure
 Contains the plan to build the physical structure parts.
