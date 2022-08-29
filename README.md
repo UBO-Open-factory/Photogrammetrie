@@ -3,12 +3,14 @@ This Python programme allows you to use several RaspberryPi (RPI) to take pictur
 
 You can use as many RPI as you want, they just have to conect them on the same wired network.
 
+
 # Requirements
 For this project you nead :
 - As many Raspberry Pi 3+ as you want with hardware camera.
 - DSLR with USB control.
 - a physical structure to hold all the RPIs. So all the RPI can have a different point of view of the subject you want to scanne.
 - a server (to store photos).
+
 
 # Client image Disk
 An image disk (.img) have been made for all your RPI. [You can found it here](./client-Install/Client_img/RPI_06.07.22_2.75Go.rar)
