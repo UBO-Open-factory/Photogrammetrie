@@ -9,9 +9,9 @@
 
 # SCHEMA
 ## General
-![General](../UML/General.png)
+![General](./UML/General.png)
 ## Mqtt
-![MQTT](../UML/Mqtt.png)
+![MQTT](./UML/Mqtt.png)
 
 # MESSAGE MQTT
 
